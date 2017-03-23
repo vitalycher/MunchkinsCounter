@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA90F92E1E769DF20094C183"
-               BuildableName = "ManchkinProduction.app"
-               BlueprintName = "ManchkinProduction"
-               ReferencedContainer = "container:ManchkinProduction.xcodeproj">
+               BuildableName = "MunchkinsCounter.app"
+               BlueprintName = "MunchkinsCounter"
+               ReferencedContainer = "container:MunchkinsCounter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA90F92E1E769DF20094C183"
-            BuildableName = "ManchkinProduction.app"
-            BlueprintName = "ManchkinProduction"
-            ReferencedContainer = "container:ManchkinProduction.xcodeproj">
+            BuildableName = "MunchkinsCounter.app"
+            BlueprintName = "MunchkinsCounter"
+            ReferencedContainer = "container:MunchkinsCounter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA90F92E1E769DF20094C183"
-            BuildableName = "ManchkinProduction.app"
-            BlueprintName = "ManchkinProduction"
-            ReferencedContainer = "container:ManchkinProduction.xcodeproj">
+            BuildableName = "MunchkinsCounter.app"
+            BlueprintName = "MunchkinsCounter"
+            ReferencedContainer = "container:MunchkinsCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA90F92E1E769DF20094C183"
-            BuildableName = "ManchkinProduction.app"
-            BlueprintName = "ManchkinProduction"
-            ReferencedContainer = "container:ManchkinProduction.xcodeproj">
+            BuildableName = "MunchkinsCounter.app"
+            BlueprintName = "MunchkinsCounter"
+            ReferencedContainer = "container:MunchkinsCounter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

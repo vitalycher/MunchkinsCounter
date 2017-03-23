@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CC8D4F988FD8B614D9DA26C /* Pods_MunchkinsCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E6C2B12F611B8E46B88AE2 /* Pods_MunchkinsCounter.framework */; };
+		74B35823C5915F9BB9DE3870 /* Pods_ManchkinProduction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555C1B81B86CFB92D11D1EEE /* Pods_ManchkinProduction.framework */; };
+		AA3770121E79513C0011FB71 /* Munchkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3770111E79513C0011FB71 /* Munchkin.swift */; };
+		AA7412CF1E802E4A00D152A7 /* ThemePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7412CE1E802E4A00D152A7 /* ThemePickerViewController.swift */; };
+		AA7C10211E828FF700DCB2B0 /* ApplicationTextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7C10201E828FF700DCB2B0 /* ApplicationTextStyles.swift */; };
+		AA81E48D1E76BD2F0090B68B /* MunchkinNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E48C1E76BD2F0090B68B /* MunchkinNumberViewController.swift */; };
+		AA81E48F1E76BDF00090B68B /* MunchkinNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E48E1E76BDF00090B68B /* MunchkinNamesViewController.swift */; };
+		AA81E4931E76CFD50090B68B /* MunchkinsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */; };
+		AA81E4951E76DABE0090B68B /* MunchkinSetupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E4941E76DABE0090B68B /* MunchkinSetupTableViewCell.swift */; };
+		AA81E4971E79447D0090B68B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E4961E79447D0090B68B /* GameViewController.swift */; };
+		AA81E49B1E79480F0090B68B /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81E49A1E79480F0090B68B /* GameTableViewCell.swift */; };
+		AA88F8FC1E83F57700C7B02C /* ApplicationMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F8FB1E83F57700C7B02C /* ApplicationMessages.swift */; };
+		AA90F9331E769DF20094C183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90F9321E769DF20094C183 /* AppDelegate.swift */; };
+		AA90F9351E769DF20094C183 /* GreetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90F9341E769DF20094C183 /* GreetingsViewController.swift */; };
+		AA90F9381E769DF20094C183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90F9361E769DF20094C183 /* Main.storyboard */; };
+		AA90F93A1E769DF20094C183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA90F9391E769DF20094C183 /* Assets.xcassets */; };
+		AA90F93D1E769DF20094C183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90F93B1E769DF20094C183 /* LaunchScreen.storyboard */; };
+		AAD9ABC61E7C1F15008457EB /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9ABC51E7C1F15008457EB /* UIColor+RGB.swift */; };
+		AAD9ABC81E7C1FCD008457EB /* UIView+ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9ABC71E7C1FCD008457EB /* UIView+ParentViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05F32B53F1F6F56294273D31 /* Pods-ManchkinProduction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManchkinProduction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManchkinProduction/Pods-ManchkinProduction.debug.xcconfig"; sourceTree = "<group>"; };
+		555C1B81B86CFB92D11D1EEE /* Pods_ManchkinProduction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManchkinProduction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CE09859E31507CBF2D3D2C /* Pods-ManchkinProduction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManchkinProduction.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManchkinProduction/Pods-ManchkinProduction.release.xcconfig"; sourceTree = "<group>"; };
+		70E6C2B12F611B8E46B88AE2 /* Pods_MunchkinsCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinsCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3770111E79513C0011FB71 /* Munchkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Munchkin.swift; sourceTree = "<group>"; };
+		AA7412CE1E802E4A00D152A7 /* ThemePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePickerViewController.swift; sourceTree = "<group>"; };
+		AA7C10201E828FF700DCB2B0 /* ApplicationTextStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationTextStyles.swift; sourceTree = "<group>"; };
+		AA81E48C1E76BD2F0090B68B /* MunchkinNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunchkinNumberViewController.swift; sourceTree = "<group>"; };
+		AA81E48E1E76BDF00090B68B /* MunchkinNamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunchkinNamesViewController.swift; sourceTree = "<group>"; };
+		AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunchkinsDatabase.swift; sourceTree = "<group>"; };
+		AA81E4941E76DABE0090B68B /* MunchkinSetupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunchkinSetupTableViewCell.swift; sourceTree = "<group>"; };
+		AA81E4961E79447D0090B68B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AA81E49A1E79480F0090B68B /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		AA88F8FB1E83F57700C7B02C /* ApplicationMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationMessages.swift; sourceTree = "<group>"; };
+		AA90F92F1E769DF20094C183 /* MunchkinsCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunchkinsCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA90F9321E769DF20094C183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA90F9341E769DF20094C183 /* GreetingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingsViewController.swift; sourceTree = "<group>"; };
+		AA90F9371E769DF20094C183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA90F9391E769DF20094C183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA90F93C1E769DF20094C183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA90F93E1E769DF20094C183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD9ABC51E7C1F15008457EB /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		AAD9ABC71E7C1FCD008457EB /* UIView+ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ParentViewController.swift"; sourceTree = "<group>"; };
+		CC017A3E44BB3FF3F5AB9E5F /* Pods-MunchkinsCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinsCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinsCounter/Pods-MunchkinsCounter.release.xcconfig"; sourceTree = "<group>"; };
+		D3AFE43DC427791B4C735216 /* Pods-MunchkinsCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinsCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinsCounter/Pods-MunchkinsCounter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA90F92C1E769DF20094C183 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74B35823C5915F9BB9DE3870 /* Pods_ManchkinProduction.framework in Frameworks */,
+				3CC8D4F988FD8B614D9DA26C /* Pods_MunchkinsCounter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E9E8E551D89B87971BFF296 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				555C1B81B86CFB92D11D1EEE /* Pods_ManchkinProduction.framework */,
+				70E6C2B12F611B8E46B88AE2 /* Pods_MunchkinsCounter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA81E4901E76C7F10090B68B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA90F9341E769DF20094C183 /* GreetingsViewController.swift */,
+				AA81E48C1E76BD2F0090B68B /* MunchkinNumberViewController.swift */,
+				AA81E48E1E76BDF00090B68B /* MunchkinNamesViewController.swift */,
+				AA81E4961E79447D0090B68B /* GameViewController.swift */,
+				AA7412CE1E802E4A00D152A7 /* ThemePickerViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AA81E4911E76CFC30090B68B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */,
+				AA3770111E79513C0011FB71 /* Munchkin.swift */,
+				AA81E4941E76DABE0090B68B /* MunchkinSetupTableViewCell.swift */,
+				AA81E49A1E79480F0090B68B /* GameTableViewCell.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AA88F8FA1E83F56200C7B02C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AA7C10201E828FF700DCB2B0 /* ApplicationTextStyles.swift */,
+				AA88F8FB1E83F57700C7B02C /* ApplicationMessages.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		AA90F9261E769DF20094C183 = {
+			isa = PBXGroup;
+			children = (
+				AA90F9311E769DF20094C183 /* ManchkinProduction */,
+				AA90F9301E769DF20094C183 /* Products */,
+				FAF3E8D1FF921043188C4514 /* Pods */,
+				6E9E8E551D89B87971BFF296 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AA90F9301E769DF20094C183 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA90F92F1E769DF20094C183 /* MunchkinsCounter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA90F9311E769DF20094C183 /* ManchkinProduction */ = {
+			isa = PBXGroup;
+			children = (
+				AA90F9321E769DF20094C183 /* AppDelegate.swift */,
+				AA88F8FA1E83F56200C7B02C /* Common */,
+				AAD9ABC41E7C1EFB008457EB /* Extensions */,
+				AA81E4911E76CFC30090B68B /* Models */,
+				AA81E4901E76C7F10090B68B /* ViewControllers */,
+				AA90F9391E769DF20094C183 /* Assets.xcassets */,
+				AA90F9361E769DF20094C183 /* Main.storyboard */,
+				AA90F93B1E769DF20094C183 /* LaunchScreen.storyboard */,
+				AA90F93E1E769DF20094C183 /* Info.plist */,
+			);
+			path = ManchkinProduction;
+			sourceTree = "<group>";
+		};
+		AAD9ABC41E7C1EFB008457EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAD9ABC51E7C1F15008457EB /* UIColor+RGB.swift */,
+				AAD9ABC71E7C1FCD008457EB /* UIView+ParentViewController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF3E8D1FF921043188C4514 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05F32B53F1F6F56294273D31 /* Pods-ManchkinProduction.debug.xcconfig */,
+				56CE09859E31507CBF2D3D2C /* Pods-ManchkinProduction.release.xcconfig */,
+				D3AFE43DC427791B4C735216 /* Pods-MunchkinsCounter.debug.xcconfig */,
+				CC017A3E44BB3FF3F5AB9E5F /* Pods-MunchkinsCounter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA90F92E1E769DF20094C183 /* MunchkinsCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA90F9411E769DF20094C183 /* Build configuration list for PBXNativeTarget "MunchkinsCounter" */;
+			buildPhases = (
+				56EBE9AA9FE13C64681E5604 /* [CP] Check Pods Manifest.lock */,
+				AA90F92B1E769DF20094C183 /* Sources */,
+				AA90F92C1E769DF20094C183 /* Frameworks */,
+				AA90F92D1E769DF20094C183 /* Resources */,
+				92F35DAAF5BEFA8387830B95 /* [CP] Embed Pods Frameworks */,
+				57BE1563A227914CF7388A60 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MunchkinsCounter;
+			productName = ManchkinProduction;
+			productReference = AA90F92F1E769DF20094C183 /* MunchkinsCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA90F9271E769DF20094C183 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Vitaly Chenrish";
+				TargetAttributes = {
+					AA90F92E1E769DF20094C183 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F8GG3V3R22;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AA90F92A1E769DF20094C183 /* Build configuration list for PBXProject "MunchkinsCounter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA90F9261E769DF20094C183;
+			productRefGroup = AA90F9301E769DF20094C183 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA90F92E1E769DF20094C183 /* MunchkinsCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA90F92D1E769DF20094C183 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA90F93D1E769DF20094C183 /* LaunchScreen.storyboard in Resources */,
+				AA90F93A1E769DF20094C183 /* Assets.xcassets in Resources */,
+				AA90F9381E769DF20094C183 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56EBE9AA9FE13C64681E5604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		57BE1563A227914CF7388A60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinsCounter/Pods-MunchkinsCounter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92F35DAAF5BEFA8387830B95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinsCounter/Pods-MunchkinsCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA90F92B1E769DF20094C183 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA81E4971E79447D0090B68B /* GameViewController.swift in Sources */,
+				AA81E49B1E79480F0090B68B /* GameTableViewCell.swift in Sources */,
+				AAD9ABC81E7C1FCD008457EB /* UIView+ParentViewController.swift in Sources */,
+				AAD9ABC61E7C1F15008457EB /* UIColor+RGB.swift in Sources */,
+				AA81E48F1E76BDF00090B68B /* MunchkinNamesViewController.swift in Sources */,
+				AA90F9351E769DF20094C183 /* GreetingsViewController.swift in Sources */,
+				AA7C10211E828FF700DCB2B0 /* ApplicationTextStyles.swift in Sources */,
+				AA81E4951E76DABE0090B68B /* MunchkinSetupTableViewCell.swift in Sources */,
+				AA88F8FC1E83F57700C7B02C /* ApplicationMessages.swift in Sources */,
+				AA7412CF1E802E4A00D152A7 /* ThemePickerViewController.swift in Sources */,
+				AA90F9331E769DF20094C183 /* AppDelegate.swift in Sources */,
+				AA3770121E79513C0011FB71 /* Munchkin.swift in Sources */,
+				AA81E4931E76CFD50090B68B /* MunchkinsDatabase.swift in Sources */,
+				AA81E48D1E76BD2F0090B68B /* MunchkinNumberViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA90F9361E769DF20094C183 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA90F9371E769DF20094C183 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA90F93B1E769DF20094C183 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA90F93C1E769DF20094C183 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA90F93F1E769DF20094C183 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA90F9401E769DF20094C183 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA90F9421E769DF20094C183 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3AFE43DC427791B4C735216 /* Pods-MunchkinsCounter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F8GG3V3R22;
+				INFOPLIST_FILE = ManchkinProduction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VC.MunchkinsCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AA90F9431E769DF20094C183 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC017A3E44BB3FF3F5AB9E5F /* Pods-MunchkinsCounter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F8GG3V3R22;
+				INFOPLIST_FILE = ManchkinProduction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VC.MunchkinsCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA90F92A1E769DF20094C183 /* Build configuration list for PBXProject "MunchkinsCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA90F93F1E769DF20094C183 /* Debug */,
+				AA90F9401E769DF20094C183 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA90F9411E769DF20094C183 /* Build configuration list for PBXNativeTarget "MunchkinsCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA90F9421E769DF20094C183 /* Debug */,
+				AA90F9431E769DF20094C183 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA90F9271E769DF20094C183 /* Project object */;
+}
