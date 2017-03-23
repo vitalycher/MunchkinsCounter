@@ -17,7 +17,13 @@ class MunchkinsDatabase {
     var munchkinsCountAcceptedPipe = ModelsTreeKit.Pipe<Void>()
     var errorPipe = ModelsTreeKit.Pipe<(title: String, message: String)>()
     
-    var munchkins = [Munchkin]()
+    var munchkins = [Munchkin]() {
+        didSet {
+           summaryValiditySignal = munchkins.map { $0.isValid }.reduce(Observable(true)) { result, element in result && element }.observable()
+        }
+    }
+
+    var summaryValiditySignal: Signal<Bool>?
     
     func initializeMunchkins(with munchkinNumber: String?) {
         if let stringNumber = munchkinNumber {

@@ -245,6 +245,7 @@ All rights reserved. ©</string>
                     </navigationItem>
                     <connections>
                         <outlet property="munchkinTableView" destination="9of-nZ-wCQ" id="BnG-C1-UKv"/>
+                        <outlet property="startGameButton" destination="DXr-Ys-llo" id="Er2-ds-Das"/>
                         <segue destination="VlQ-n6-Ko7" kind="presentation" identifier="ThemePickerSegue" id="yvD-lT-SPE"/>
                     </connections>
                 </viewController>

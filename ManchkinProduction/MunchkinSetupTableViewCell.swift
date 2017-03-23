@@ -19,12 +19,13 @@ class MunchkinSetupTableViewCell: UITableViewCell {
     
     var manchkin: Munchkin? {
         didSet {
-            manchkin?.name.subscribeNext { [weak self] in self?.playerNameTextField.text = $0 }.ownedBy(self).putInto(self.pool)
+            manchkin?.name.subscribeNext { [weak self] in self?.playerNameTextField.text = $0
+                }.ownedBy(self).putInto(self.pool)
         }
         
     }
     weak var delegate: ChangableWithMunchkinName?
-
+    
     @IBOutlet weak private var playerImageView: UIImageView!
     @IBOutlet weak private var playerNumberLabel: UILabel!
     @IBOutlet weak private var playerNameTextField: UITextField!
@@ -37,7 +38,7 @@ class MunchkinSetupTableViewCell: UITableViewCell {
         animateElements()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(MunchkinSetupTableViewCell.chooseImageTheme))
-
+        
         playerNameTextField.textSignal.subscribeNext { [weak self] in
             self?.manchkin?.applyName($0)
             }.ownedBy(self)
@@ -74,7 +75,7 @@ class MunchkinSetupTableViewCell: UITableViewCell {
     private func prepareForAnimation() {
         playerNameTextField.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
         playerImageView.transform = CGAffineTransform.init(scaleX: 0.25, y: 0.25)
-
+        
     }
     
     private func animateElements() {

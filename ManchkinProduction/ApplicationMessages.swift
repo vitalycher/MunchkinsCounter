@@ -1,5 +1,5 @@
 //
-//  AlertMessages.swift
+//  ApplicationMessages.swift
 //  MunchkinsCounter
 //
 //  Created by Vitaly Chernish on 23.03.17.

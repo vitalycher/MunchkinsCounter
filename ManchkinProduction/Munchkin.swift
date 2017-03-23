@@ -15,6 +15,8 @@ class Munchkin {
     var level = Observable(1)
     var image = Observable(UIImage())
     
+    lazy var isValid: Signal<Bool> = self.name.map { $0.characters.count > 1 }
+    
     init() {
         selectImageAccordingToLevel()
     }

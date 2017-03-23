@@ -11,9 +11,12 @@ import UIKit
 class MunchkinNamesViewController: UIViewController {
     
     @IBOutlet weak fileprivate var munchkinTableView: UITableView!
+    @IBOutlet weak private var startGameButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MunchkinsDatabase.shared.summaryValiditySignal?.subscribeNext { [weak self] in self?.startGameButton.isEnabled = $0 }.ownedBy(self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MunchkinNamesViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         

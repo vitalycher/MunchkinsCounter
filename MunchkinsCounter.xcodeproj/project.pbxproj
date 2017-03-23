@@ -93,10 +93,7 @@
 		AA81E4911E76CFC30090B68B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */,
 				AA3770111E79513C0011FB71 /* Munchkin.swift */,
-				AA81E4941E76DABE0090B68B /* MunchkinSetupTableViewCell.swift */,
-				AA81E49A1E79480F0090B68B /* GameTableViewCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -104,10 +101,22 @@
 		AA88F8FA1E83F56200C7B02C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AA90F9391E769DF20094C183 /* Assets.xcassets */,
+				AA90F9321E769DF20094C183 /* AppDelegate.swift */,
+				AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */,
 				AA7C10201E828FF700DCB2B0 /* ApplicationTextStyles.swift */,
 				AA88F8FB1E83F57700C7B02C /* ApplicationMessages.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		AA88F8FD1E84042900C7B02C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AA81E4941E76DABE0090B68B /* MunchkinSetupTableViewCell.swift */,
+				AA81E49A1E79480F0090B68B /* GameTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		AA90F9261E769DF20094C183 = {
@@ -131,12 +140,11 @@
 		AA90F9311E769DF20094C183 /* ManchkinProduction */ = {
 			isa = PBXGroup;
 			children = (
-				AA90F9321E769DF20094C183 /* AppDelegate.swift */,
 				AA88F8FA1E83F56200C7B02C /* Common */,
 				AAD9ABC41E7C1EFB008457EB /* Extensions */,
 				AA81E4911E76CFC30090B68B /* Models */,
+				AA88F8FD1E84042900C7B02C /* Cells */,
 				AA81E4901E76C7F10090B68B /* ViewControllers */,
-				AA90F9391E769DF20094C183 /* Assets.xcassets */,
 				AA90F9361E769DF20094C183 /* Main.storyboard */,
 				AA90F93B1E769DF20094C183 /* LaunchScreen.storyboard */,
 				AA90F93E1E769DF20094C183 /* Info.plist */,
