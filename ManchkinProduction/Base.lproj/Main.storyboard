@@ -165,7 +165,7 @@ All rights reserved. ©</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LG0-T7-glZ" id="mgV-Av-HvX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlr-q0-SPQ">
@@ -273,7 +273,7 @@ All rights reserved. ©</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rr-rg-a2s" id="VJM-vT-RKP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-JV-FCN">
@@ -440,28 +440,54 @@ All rights reserved. ©</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="432" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-za-tsB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="505" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-za-tsB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThemePickerCell" rowHeight="432" id="Zvt-eN-59h">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="432"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThemePickerCell" rowHeight="505" id="Zvt-eN-59h" customClass="ThemeTableViewCell" customModule="MunchkinsCounter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="505"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zvt-eN-59h" id="avp-lF-7yn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="505"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lvl3" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-UX-AHK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZd-5Z-hHL">
+                                                    <rect key="frame" x="163" y="8" width="49" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-UX-AHK">
+                                                    <rect key="frame" x="0.0" y="77" width="375" height="408"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qp7-6I-hfW">
+                                                    <rect key="frame" x="3" y="40" width="368" height="36"/>
+                                                    <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="0.64332726883561642" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="368" id="nOb-H1-Azq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="Choose">
+                                                        <color key="titleColor" red="0.0" green="0.50196078431372548" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YBf-UX-AHK" firstAttribute="leading" secondItem="avp-lF-7yn" secondAttribute="leading" id="AaC-zB-HyI"/>
-                                                <constraint firstAttribute="trailing" secondItem="YBf-UX-AHK" secondAttribute="trailing" id="Tbj-SM-UG6"/>
-                                                <constraint firstAttribute="bottom" secondItem="YBf-UX-AHK" secondAttribute="bottom" id="ekM-OM-Oah"/>
-                                                <constraint firstItem="YBf-UX-AHK" firstAttribute="top" secondItem="avp-lF-7yn" secondAttribute="top" id="quV-o5-BVn"/>
+                                                <constraint firstItem="YBf-UX-AHK" firstAttribute="top" secondItem="Qp7-6I-hfW" secondAttribute="bottom" constant="1" id="2Ic-d0-CAv"/>
+                                                <constraint firstItem="YBf-UX-AHK" firstAttribute="leading" secondItem="avp-lF-7yn" secondAttribute="leading" id="BFI-i1-Kz3"/>
+                                                <constraint firstAttribute="bottom" secondItem="YBf-UX-AHK" secondAttribute="bottom" constant="20" symbolic="YES" id="D6i-ea-ofF"/>
+                                                <constraint firstItem="LZd-5Z-hHL" firstAttribute="top" secondItem="avp-lF-7yn" secondAttribute="top" constant="8" id="QpH-EW-Iga"/>
+                                                <constraint firstItem="LZd-5Z-hHL" firstAttribute="centerX" secondItem="avp-lF-7yn" secondAttribute="centerX" id="Tub-YW-jph"/>
+                                                <constraint firstItem="Qp7-6I-hfW" firstAttribute="centerX" secondItem="LZd-5Z-hHL" secondAttribute="centerX" constant="-0.5" id="eUw-FN-Pm8"/>
+                                                <constraint firstAttribute="trailing" secondItem="YBf-UX-AHK" secondAttribute="trailing" id="uVz-ab-Zfn"/>
+                                                <constraint firstItem="Qp7-6I-hfW" firstAttribute="top" secondItem="LZd-5Z-hHL" secondAttribute="bottom" constant="8" id="zfk-hG-Ihi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chooseTheme" destination="Qp7-6I-hfW" id="WE1-as-F02"/>
+                                            <outlet property="headerLabel" destination="LZd-5Z-hHL" id="ZXJ-Zq-sot"/>
+                                            <outlet property="themeImageView" destination="YBf-UX-AHK" id="ijM-1b-SCo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -485,7 +511,7 @@ All rights reserved. ©</string>
                                 <action selector="dismissThemePicker:" destination="OLY-sn-2Wf" id="h6d-Ce-izP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Choose" id="Bdg-EK-bCl">
+                        <barButtonItem key="rightBarButtonItem" id="Bdg-EK-bCl">
                             <color key="tintColor" red="0.0" green="0.50196078431372548" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="chooseTheme:" destination="OLY-sn-2Wf" id="vOf-Ye-tsB"/>
@@ -526,7 +552,6 @@ All rights reserved. ©</string>
         <image name="GO" width="359" height="341"/>
         <image name="leftArrow" width="128" height="128"/>
         <image name="lvl1" width="400" height="300"/>
-        <image name="lvl3" width="448" height="568"/>
         <image name="rightArrow" width="128" height="128"/>
         <image name="teh" width="344" height="304"/>
     </resources>

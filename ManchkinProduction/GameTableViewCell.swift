@@ -42,7 +42,6 @@ class GameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         increaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.delegate?.cellDidRequestToIncreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
         decreaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.delegate?.cellDidRequestToDecreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
         

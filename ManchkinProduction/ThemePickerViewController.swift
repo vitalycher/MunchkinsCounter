@@ -9,14 +9,14 @@
 import UIKit
 
 class ThemePickerViewController: UIViewController {
-
+    
+    var munchkin: Munchkin?
+    
     @IBOutlet weak private var themePickerTableView: UITableView!
     
     @IBAction func dismissThemePicker(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func chooseTheme(_ sender: UIBarButtonItem) { }
     
 }
 
@@ -27,15 +27,27 @@ extension ThemePickerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return MunchkinThemes.shared.themes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ThemePickerCell") {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ThemePickerCell") as? ThemeTableViewCell {
+            cell.themeApplyDelegate = self
+            let currentTheme = MunchkinThemes.shared.themes[indexPath.row]
+            cell.theme = currentTheme
             return cell
         } else {
             return UITableViewCell.init()
         }
+    }
+    
+}
+
+extension ThemePickerViewController: AppliableWithTheme {
+    
+    func cellDidRequestToApplyTheme(cell: UITableViewCell, theme: Theme) {
+        MunchkinThemes.shared.applyTheme(theme, forMunchkin: munchkin ?? Munchkin())
+        dismiss(animated: true, completion: nil)
     }
     
 }

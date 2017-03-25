@@ -14,26 +14,28 @@ class Munchkin {
     var name = Observable("")
     var level = Observable(1)
     var image = Observable(UIImage())
+    var theme = Observable(Theme())
     
     lazy var isValid: Signal<Bool> = self.name.map { $0.characters.count > 1 }
     
     init() {
+        theme.value = MunchkinThemes.shared.themes.first ?? Theme()
         selectImageAccordingToLevel()
     }
     
     func selectImageAccordingToLevel() {
         switch level.value {
-        case 1: image.value = #imageLiteral(resourceName: "lvl1")
-        case 2: image.value = #imageLiteral(resourceName: "lvl2")
-        case 3: image.value = #imageLiteral(resourceName: "lvl3")
-        case 4: image.value = #imageLiteral(resourceName: "lvl4")
-        case 5: image.value = #imageLiteral(resourceName: "lvl5")
-        case 6: image.value = #imageLiteral(resourceName: "lvl6")
-        case 7: image.value = #imageLiteral(resourceName: "lvl7")
-        case 8: image.value = #imageLiteral(resourceName: "lvl8")
-        case 9: image.value = #imageLiteral(resourceName: "lvl9")
-        case 10: image.value = #imageLiteral(resourceName: "lvl10")
-        default: image.value = #imageLiteral(resourceName: "lvl1")
+        case 1: image.value = (theme.value.subPictures?[0])!
+        case 2: image.value = (theme.value.subPictures?[1])!
+        case 3: image.value = (theme.value.subPictures?[2])!
+        case 4: image.value = (theme.value.subPictures?[3])!
+        case 5: image.value = (theme.value.subPictures?[4])!
+        case 6: image.value = (theme.value.subPictures?[5])!
+        case 7: image.value = (theme.value.subPictures?[6])!
+        case 8: image.value = (theme.value.subPictures?[7])!
+        case 9: image.value = (theme.value.subPictures?[8])!
+        case 10: image.value = (theme.value.subPictures?[9])!
+        default: image.value = (theme.value.subPictures?[10])!
         }
     }
     
@@ -41,7 +43,7 @@ class Munchkin {
         let randomNumber = Int(arc4random_uniform(10))
         switch randomNumber {
         case 0: name.value = "Вантуз"
-        case 1: name.value = "Пукиш"
+        case 1: name.value = "Долли"
         case 2: name.value = "Лапоть"
         case 3: name.value = "Коготь"
         case 4: name.value = "Омлет"
@@ -49,7 +51,7 @@ class Munchkin {
         case 6: name.value = "Утка"
         case 7: name.value = "Кукиш"
         case 8: name.value = "Камыш"
-        case 9: name.value = "Янукович"
+        case 9: name.value = "Якубович"
         default:
             name.value = "Unnamed"
         }
@@ -84,6 +86,11 @@ class Munchkin {
         } else {
             MunchkinsDatabase.shared.errorPipe.sendNext(ApplicationMessages.cantDecreaseMunchkinLevel)
         }
+    }
+    
+    func applyTheme(_ theme: Theme) {
+        self.theme.value = theme
+        selectImageAccordingToLevel()
     }
     
 }

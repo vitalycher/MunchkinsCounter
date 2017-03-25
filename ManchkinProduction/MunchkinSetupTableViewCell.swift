@@ -15,16 +15,26 @@ protocol ChangableWithMunchkinName: class {
     
 }
 
+protocol SelectableWithTheme: class {
+    
+    func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin)
+    
+}
+
 class MunchkinSetupTableViewCell: UITableViewCell {
     
-    var manchkin: Munchkin? {
+    var munchkin: Munchkin? {
         didSet {
-            manchkin?.name.subscribeNext { [weak self] in self?.playerNameTextField.text = $0
+            munchkin?.name.subscribeNext { [weak self] in self?.playerNameTextField.text = $0
                 }.ownedBy(self).putInto(self.pool)
+            munchkin?.theme.subscribeNext {[weak self] in self?.playerImageView.image = $0.mainImage;
+                }.ownedBy(self)
         }
         
     }
-    weak var delegate: ChangableWithMunchkinName?
+    
+    weak var munchkinNameDelegate: ChangableWithMunchkinName?
+    weak var themePickerDelegate: SelectableWithTheme?
     
     @IBOutlet weak private var playerImageView: UIImageView!
     @IBOutlet weak private var playerNumberLabel: UILabel!
@@ -40,7 +50,7 @@ class MunchkinSetupTableViewCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(MunchkinSetupTableViewCell.chooseImageTheme))
         
         playerNameTextField.textSignal.subscribeNext { [weak self] in
-            self?.manchkin?.applyName($0)
+            self?.munchkin?.applyName($0)
             }.ownedBy(self)
         
         diceButton.selectionSignal.subscribeNext { [weak self] in
@@ -63,13 +73,11 @@ class MunchkinSetupTableViewCell: UITableViewCell {
     }
     
     private func applyRandomName() {
-        delegate?.cellDidRequestToApplyMunchkinName(cell: self)
+        munchkinNameDelegate?.cellDidRequestToApplyMunchkinName(cell: self)
     }
     
     @objc private func chooseImageTheme(sender: UITapGestureRecognizer) {
-        if let parentViewController = self.parentViewController {
-            parentViewController.performSegue(withIdentifier: "ThemePickerSegue", sender: nil)
-        }
+        themePickerDelegate?.cellDidRequestToOpenThemePicker(cell: self, munchkin: munchkin ?? Munchkin())
     }
     
     private func prepareForAnimation() {

@@ -9,7 +9,7 @@
 import UIKit
 
 class GreetingsViewController: UIViewController {
-
+    
     @IBOutlet weak private var welcomeLabel: UILabel!
     @IBOutlet weak private var startButton: UIButton!
     
@@ -32,5 +32,5 @@ class GreetingsViewController: UIViewController {
             self.welcomeLabel.alpha = 1.0
         }, completion: nil)
     }
-
+    
 }
