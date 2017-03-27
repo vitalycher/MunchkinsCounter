@@ -25,6 +25,9 @@
 		AA90F9381E769DF20094C183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90F9361E769DF20094C183 /* Main.storyboard */; };
 		AA90F93A1E769DF20094C183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA90F9391E769DF20094C183 /* Assets.xcassets */; };
 		AA90F93D1E769DF20094C183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90F93B1E769DF20094C183 /* LaunchScreen.storyboard */; };
+		AACC4ED91E890C1E0037238E /* ParentValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC4ED81E890C1E0037238E /* ParentValidator.swift */; };
+		AACC4EDC1E89130B0037238E /* BasementValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC4EDB1E89130B0037238E /* BasementValidators.swift */; };
+		AACC4EDE1E891EAA0037238E /* MunchkinValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC4EDD1E891EAA0037238E /* MunchkinValidators.swift */; };
 		AAD9ABC61E7C1F15008457EB /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9ABC51E7C1F15008457EB /* UIColor+RGB.swift */; };
 		AAD9ABC81E7C1FCD008457EB /* UIView+ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9ABC71E7C1FCD008457EB /* UIView+ParentViewController.swift */; };
 		C881753EE4379DB95A3E78F6 /* Pods_MunchkinsCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A43FB3D9EFDB4638FEC0B53 /* Pods_MunchkinsCounter.framework */; };
@@ -54,6 +57,9 @@
 		AA90F9391E769DF20094C183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA90F93C1E769DF20094C183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA90F93E1E769DF20094C183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AACC4ED81E890C1E0037238E /* ParentValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentValidator.swift; sourceTree = "<group>"; };
+		AACC4EDB1E89130B0037238E /* BasementValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasementValidators.swift; sourceTree = "<group>"; };
+		AACC4EDD1E891EAA0037238E /* MunchkinValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunchkinValidators.swift; sourceTree = "<group>"; };
 		AAD9ABC51E7C1F15008457EB /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		AAD9ABC71E7C1FCD008457EB /* UIView+ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ParentViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +111,7 @@
 				AA90F9391E769DF20094C183 /* Assets.xcassets */,
 				AA90F9321E769DF20094C183 /* AppDelegate.swift */,
 				AA81E4921E76CFD50090B68B /* MunchkinsDatabase.swift */,
+				AACC4EDA1E89118C0037238E /* Validation */,
 				AA88F8FE1E8519BA00C7B02C /* MunchkinThemes.swift */,
 				AA7C10201E828FF700DCB2B0 /* ApplicationTextStyles.swift */,
 				AA88F8FB1E83F57700C7B02C /* ApplicationMessages.swift */,
@@ -153,6 +160,16 @@
 				AA90F93E1E769DF20094C183 /* Info.plist */,
 			);
 			path = ManchkinProduction;
+			sourceTree = "<group>";
+		};
+		AACC4EDA1E89118C0037238E /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				AACC4ED81E890C1E0037238E /* ParentValidator.swift */,
+				AACC4EDB1E89130B0037238E /* BasementValidators.swift */,
+				AACC4EDD1E891EAA0037238E /* MunchkinValidators.swift */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		AAD9ABC41E7C1EFB008457EB /* Extensions */ = {
@@ -298,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA81E4971E79447D0090B68B /* GameViewController.swift in Sources */,
+				AACC4ED91E890C1E0037238E /* ParentValidator.swift in Sources */,
 				AA81E49B1E79480F0090B68B /* GameTableViewCell.swift in Sources */,
 				AAD9ABC81E7C1FCD008457EB /* UIView+ParentViewController.swift in Sources */,
 				AAD9ABC61E7C1F15008457EB /* UIColor+RGB.swift in Sources */,
@@ -309,9 +327,11 @@
 				AA88F9011E8527A700C7B02C /* ThemeTableViewCell.swift in Sources */,
 				AA7412CF1E802E4A00D152A7 /* ThemePickerViewController.swift in Sources */,
 				AA90F9331E769DF20094C183 /* AppDelegate.swift in Sources */,
+				AACC4EDE1E891EAA0037238E /* MunchkinValidators.swift in Sources */,
 				AA3770121E79513C0011FB71 /* Munchkin.swift in Sources */,
 				AA81E4931E76CFD50090B68B /* MunchkinsDatabase.swift in Sources */,
 				AA88F8FF1E8519BA00C7B02C /* MunchkinThemes.swift in Sources */,
+				AACC4EDC1E89130B0037238E /* BasementValidators.swift in Sources */,
 				AA81E48D1E76BD2F0090B68B /* MunchkinNumberViewController.swift in Sources */,
 				AA630CB61E855A3900DB8EDF /* Theme.swift in Sources */,
 			);

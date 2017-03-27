@@ -10,15 +10,11 @@ import UIKit
 import ModelsTreeKit
 
 protocol ChangableWithMunchkinName: class {
-    
     func cellDidRequestToApplyMunchkinName(cell: UITableViewCell)
-    
 }
 
 protocol SelectableWithTheme: class {
-    
     func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin)
-    
 }
 
 class MunchkinSetupTableViewCell: UITableViewCell {

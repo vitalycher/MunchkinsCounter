@@ -18,11 +18,11 @@ class MunchkinNumberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MunchkinsDatabase.shared.errorPipe.subscribeNext { [weak self] in self?.showWrongMunchkinNumberAlert(with: $0.title, andMessage: $0.message) }.ownedBy(self)
-        
         MunchkinsDatabase.shared.munchkinsCountAcceptedPipe.subscribeNext { [weak self] in self?.performSegue(withIdentifier: "InitializeMunchkinsSegue", sender: nil) }.ownedBy(self)
         
-        procceedButton.selectionSignal.subscribeNext { [weak self] in MunchkinsDatabase.shared.initializeMunchkins(with: self?.manchkinNumberTextField.text) }.ownedBy(self)
+        procceedButton.selectionSignal.subscribeNext { [weak self]  in MunchkinsDatabase.shared.initializeMunchkins(with: self?.manchkinNumberTextField.text).subscribeNext { [weak self] in if let error = $0 {
+                self?.showWrongMunchkinNumberAlert(withTitle: error.title, andMessage: error.message)
+            } }.ownedBy(self!) }.ownedBy(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +47,7 @@ class MunchkinNumberViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    private func showWrongMunchkinNumberAlert(with title: String, andMessage message: String) {
+    private func showWrongMunchkinNumberAlert(withTitle title: String, andMessage message: String) {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.add(AlertAction(title: ApplicationMessages.confirmMessage, style: .normal))

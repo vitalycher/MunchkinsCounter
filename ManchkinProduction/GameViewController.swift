@@ -21,9 +21,6 @@ class GameViewController: UIViewController {
             let munchkinName = $0.name.value
             self?.showWinAlert(for: munchkinName) }.ownedBy(self)
         
-        MunchkinsDatabase.shared.errorPipe.subscribeNext { [weak self] in
-            self?.showCantDecreaseLevelAlert(with: $0.title, andMessage: $0.message) }.ownedBy(self)
-        
         gameTableView.tableFooterView = UIView()
     }
     
@@ -49,7 +46,7 @@ class GameViewController: UIViewController {
         alert.present()
     }
     
-    private func showCantDecreaseLevelAlert(with title: String, andMessage message: String) {
+    fileprivate func showCantDecreaseLevelAlert(with title: String, andMessage message: String) {
          let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.add(AlertAction(title: ApplicationMessages.confirmMessage, style: .normal))
@@ -89,7 +86,9 @@ extension GameViewController: ChangableWithMunchkinLevel {
     
     func cellDidRequestToDecreaseLevel(cell: UITableViewCell) {
         let index = gameTableView.indexPath(for: cell)?.row
-        MunchkinsDatabase.shared.decreaseMunchkinLevel(at: index)
+        MunchkinsDatabase.shared.decreaseMunchkinLevel(at: index).subscribeNext { [weak self] in if let error = $0 {
+            self?.showCantDecreaseLevelAlert(with: error.message, andMessage: error.title)
+            } }.autodispose()
     }
     
 }

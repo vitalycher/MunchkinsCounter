@@ -15,7 +15,6 @@ class MunchkinsDatabase {
     
     var winPipe = ModelsTreeKit.Pipe<Munchkin>()
     var munchkinsCountAcceptedPipe = ModelsTreeKit.Pipe<Void>()
-    var errorPipe = ModelsTreeKit.Pipe<(title: String, message: String)>()
     
     var munchkins = [Munchkin]() {
         didSet {
@@ -25,25 +24,34 @@ class MunchkinsDatabase {
 
     var summaryValiditySignal: Signal<Bool>?
     
-    func initializeMunchkins(with munchkinNumber: String?) {
+    typealias ErrorMessageWithDescription = (title: String, message: String)
+    
+    func initializeMunchkins(with munchkinNumber: String?) -> Signal<ErrorMessageWithDescription?> {
+        let errorObservable = Observable<ErrorMessageWithDescription?>(nil)
+        var error: ErrorMessageWithDescription?
+        
         if let stringNumber = munchkinNumber {
             if let number = Int(stringNumber) {
-                switch number {
-                case 2...10:
+                
+                if ApplicationValidators.allowedMunchkinsCount.check(number) {
                     munchkinsCountAcceptedPipe.sendNext()
                     for _ in 0..<number {
                         munchkins.append(Munchkin())
                     }
-                case 0...1: errorPipe.sendNext(ApplicationMessages.notEnoughPlayers)
-                default: errorPipe.sendNext(ApplicationMessages.tooMuchPlayers)
+                } else if ApplicationValidators.lowMunchkinsCount.check(number) {
+                    error = ApplicationMessages.notEnoughPlayers
+                } else {
+                   error = ApplicationMessages.tooMuchPlayers
                 }
                 
             } else {
-                errorPipe.sendNext(ApplicationMessages.didNotRecognizeNumber)
+                error = ApplicationMessages.didNotRecognizeNumber
             }
         } else {
-            errorPipe.sendNext(ApplicationMessages.nullNumber)
+            error = ApplicationMessages.nullNumber
         }
+        errorObservable.value = error
+        return errorObservable
     }
     
     func cleanDatabase() {
@@ -61,11 +69,18 @@ class MunchkinsDatabase {
         }
     }
     
-    func decreaseMunchkinLevel(at index: Int?) {
-        if let index = index {
-            let munchkin = munchkins[index]
-            munchkin.decreaseLevel()
+    func decreaseMunchkinLevel(at index: Int?) -> Signal<ErrorMessageWithDescription?> {
+        let munchkin = munchkins[index!]
+        return tryDecreaseLevel(for: munchkin)
+    }
+    
+    func tryDecreaseLevel(for munchkin: Munchkin) -> Signal<ErrorMessageWithDescription?> {
+        let result = munchkin.decreaseLevelIfPossible()
+        let resultSignal = Observable<ErrorMessageWithDescription?>(nil)
+        if result == false {
+            resultSignal.value = ApplicationMessages.cantDecreaseMunchkinLevel
         }
+        return resultSignal
     }
     
     func chooseRandomNameForMunchkin(at index: Int?) {

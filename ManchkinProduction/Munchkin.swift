@@ -16,7 +16,7 @@ class Munchkin {
     var image = Observable(UIImage())
     var theme = Observable(Theme())
     
-    lazy var isValid: Signal<Bool> = self.name.map { $0.characters.count > 1 }
+    lazy var isValid: Signal<Bool> = self.name.map { ApplicationValidators.nameValidator.check($0) }
     
     init() {
         theme.value = MunchkinThemes.shared.themes.first ?? Theme()
@@ -79,12 +79,13 @@ class Munchkin {
         }
     }
     
-    func decreaseLevel() {
+    func decreaseLevelIfPossible() -> Bool {
         if level.value > 1 {
             level.value -= 1
             selectImageAccordingToLevel()
+            return true
         } else {
-            MunchkinsDatabase.shared.errorPipe.sendNext(ApplicationMessages.cantDecreaseMunchkinLevel)
+            return false
         }
     }
     
