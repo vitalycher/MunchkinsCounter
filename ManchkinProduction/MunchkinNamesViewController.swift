@@ -68,6 +68,7 @@ extension MunchkinNamesViewController: UITableViewDataSource {
             themePickerVC.munchkin = self.munchkin
         }
     }
+    
 }
 
 extension MunchkinNamesViewController: ChangableWithMunchkinName {
@@ -80,8 +81,10 @@ extension MunchkinNamesViewController: ChangableWithMunchkinName {
 }
 
 extension MunchkinNamesViewController: SelectableWithTheme {
+    
     func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin) {
         self.munchkin = munchkin
         performSegue(withIdentifier: "ThemePickerSegue", sender: self)
     }
+    
 }

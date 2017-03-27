@@ -10,11 +10,15 @@ import UIKit
 import ModelsTreeKit
 
 protocol ChangableWithMunchkinName: class {
+    
     func cellDidRequestToApplyMunchkinName(cell: UITableViewCell)
+    
 }
 
 protocol SelectableWithTheme: class {
+    
     func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin)
+    
 }
 
 class MunchkinSetupTableViewCell: UITableViewCell {
@@ -26,7 +30,6 @@ class MunchkinSetupTableViewCell: UITableViewCell {
             munchkin?.theme.subscribeNext {[weak self] in self?.playerImageView.image = $0.mainImage;
                 }.ownedBy(self)
         }
-        
     }
     
     weak var munchkinNameDelegate: ChangableWithMunchkinName?

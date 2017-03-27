@@ -41,13 +41,13 @@ class GameViewController: UIViewController {
         
         alert.add(playAgainAction)
         alert.add(AlertAction(title: "Cancel", style: .destructive))
-
+        
         alert.attributedMessage = attributedAlertMessage
         alert.present()
     }
     
     fileprivate func showCantDecreaseLevelAlert(with title: String, andMessage message: String) {
-         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.add(AlertAction(title: ApplicationMessages.confirmMessage, style: .normal))
         alert.present()

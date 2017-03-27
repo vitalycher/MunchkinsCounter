@@ -36,7 +36,6 @@ class GameTableViewCell: UITableViewCell {
             munchkin?.image.subscribeNext { [weak self] in
                 self?.playerImageView.image = $0
                 }.ownedBy(self).putInto(self.pool)
-            
         }
     }
     
