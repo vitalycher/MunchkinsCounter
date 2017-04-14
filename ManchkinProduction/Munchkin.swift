@@ -16,8 +16,8 @@ class Munchkin {
     var image = Observable(UIImage())
     var theme = Observable(Theme())
     
-    lazy var isValid: Signal<Bool> = self.name.map { ApplicationValidators.nameValidator.check($0) }
-    
+    lazy var isValid: Signal<Bool> = self.name.map { Validators.nameValidator.check($0) }
+            
     init() {
         theme.value = MunchkinThemes.shared.themes.first ?? Theme()
         selectImageAccordingToLevel()
@@ -42,14 +42,14 @@ class Munchkin {
     func applyRandomName() {
         let randomNumber = Int(arc4random_uniform(10))
         switch randomNumber {
-        case 0: name.value = "Вантуз"
+        case 0: name.value = "Уилл"
         case 1: name.value = "Долли"
-        case 2: name.value = "Лапоть"
+        case 2: name.value = "Клык"
         case 3: name.value = "Коготь"
         case 4: name.value = "Омлет"
         case 5: name.value = "Зубочистка"
         case 6: name.value = "Утка"
-        case 7: name.value = "Кукиш"
+        case 7: name.value = "Билл"
         case 8: name.value = "Камыш"
         case 9: name.value = "Якубович"
         default:
@@ -61,24 +61,17 @@ class Munchkin {
         self.name.value = name
     }
     
-    func canAddLevel() -> Bool {
-        if level.value > 9 {
-            return false
-        } else if level.value <= 9 {
-            return true
-        } else {
-            return false
+    func addLevelIfPossible() {
+        if level.value < 10 {
+            level.value += 1
+            selectImageAccordingToLevel()
         }
     }
     
-    func addLevel() {
-        level.value += 1
-        selectImageAccordingToLevel()
-        if level.value == 10 {
-            MunchkinsDatabase.shared.winPipe.sendNext(self)
-        }
+    func isWinner() -> Signal<Bool> {
+        return self.level.map { $0 == 10 }
     }
-    
+        
     func decreaseLevelIfPossible() -> Bool {
         if level.value > 1 {
             level.value -= 1

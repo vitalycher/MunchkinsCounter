@@ -9,12 +9,6 @@
 import UIKit
 import ModelsTreeKit
 
-protocol ChangableWithMunchkinName: class {
-    
-    func cellDidRequestToApplyMunchkinName(cell: UITableViewCell)
-    
-}
-
 protocol SelectableWithTheme: class {
     
     func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin)
@@ -27,12 +21,11 @@ class MunchkinSetupTableViewCell: UITableViewCell {
         didSet {
             munchkin?.name.subscribeNext { [weak self] in self?.playerNameTextField.text = $0
                 }.ownedBy(self).putInto(self.pool)
-            munchkin?.theme.subscribeNext {[weak self] in self?.playerImageView.image = $0.mainImage;
+            munchkin?.theme.subscribeNext { [weak self] in self?.playerImageView.image = $0.mainImage
                 }.ownedBy(self)
         }
     }
     
-    weak var munchkinNameDelegate: ChangableWithMunchkinName?
     weak var themePickerDelegate: SelectableWithTheme?
     
     @IBOutlet weak private var playerImageView: UIImageView!
@@ -53,7 +46,7 @@ class MunchkinSetupTableViewCell: UITableViewCell {
             }.ownedBy(self)
         
         diceButton.selectionSignal.subscribeNext { [weak self] in
-            self?.applyRandomName()
+            self?.munchkin?.applyRandomName()
             }.ownedBy(self)
         
         playerImageView.isUserInteractionEnabled = true
@@ -71,10 +64,6 @@ class MunchkinSetupTableViewCell: UITableViewCell {
         playerNumberLabel.text = "Munchkin №" + String(number + 1)
     }
     
-    private func applyRandomName() {
-        munchkinNameDelegate?.cellDidRequestToApplyMunchkinName(cell: self)
-    }
-    
     @objc private func chooseImageTheme(sender: UITapGestureRecognizer) {
         themePickerDelegate?.cellDidRequestToOpenThemePicker(cell: self, munchkin: munchkin ?? Munchkin())
     }
@@ -82,7 +71,6 @@ class MunchkinSetupTableViewCell: UITableViewCell {
     private func prepareForAnimation() {
         playerNameTextField.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
         playerImageView.transform = CGAffineTransform.init(scaleX: 0.25, y: 0.25)
-        
     }
     
     private func animateElements() {

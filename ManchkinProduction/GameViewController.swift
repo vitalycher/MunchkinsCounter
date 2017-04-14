@@ -16,11 +16,10 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         MunchkinsDatabase.shared.winPipe.subscribeNext { [weak self] in
             let munchkinName = $0.name.value
             self?.showWinAlert(for: munchkinName) }.ownedBy(self)
-        
         gameTableView.tableFooterView = UIView()
     }
     
@@ -67,7 +66,7 @@ extension GameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell {
-            cell.delegate = self
+            cell.levelDelegate = self
             cell.munchkin = MunchkinsDatabase.shared.munchkins[indexPath.row]
             return cell
         } else {

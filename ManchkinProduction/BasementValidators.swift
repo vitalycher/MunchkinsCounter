@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ApplicationValidators {
+struct Validators {
     
     //MARK: String validators
     

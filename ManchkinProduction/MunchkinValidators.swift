@@ -1,5 +1,5 @@
 //
-//  BasementValidators.swift
+//  Validators.swift
 //  MunchkinsCounter
 //
 //  Created by Vitaly Chernish on 27.03.17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension ApplicationValidators {
+extension Validators {
     
     static let nameValidator = longerThan(2) && shorterThan(12)
     

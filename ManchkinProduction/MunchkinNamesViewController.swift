@@ -13,12 +13,11 @@ class MunchkinNamesViewController: UIViewController {
     @IBOutlet weak fileprivate var munchkinTableView: UITableView!
     @IBOutlet weak private var startGameButton: UIBarButtonItem!
     
-    fileprivate var munchkin = Munchkin()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MunchkinsDatabase.shared.summaryValiditySignal?.subscribeNext { [weak self] in self?.startGameButton.isEnabled = $0 }.ownedBy(self)
+        MunchkinsDatabase.shared.summaryValiditySignal.subscribeNext { [weak self] in
+        self?.startGameButton.isEnabled = $0 }.ownedBy(self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MunchkinNamesViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
@@ -53,7 +52,6 @@ extension MunchkinNamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Manchkin") as? MunchkinSetupTableViewCell {
-            cell.munchkinNameDelegate = self
             cell.themePickerDelegate = self
             cell.applyPlayerNumber(with: indexPath.row)
             cell.munchkin = MunchkinsDatabase.shared.munchkins[indexPath.row]
@@ -63,28 +61,16 @@ extension MunchkinNamesViewController: UITableViewDataSource {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navigationViewController = segue.destination as? UINavigationController, let themePickerVC = navigationViewController.topViewController as? ThemePickerViewController {
-            themePickerVC.munchkin = self.munchkin
-        }
-    }
-    
-}
-
-extension MunchkinNamesViewController: ChangableWithMunchkinName {
-    
-    func cellDidRequestToApplyMunchkinName(cell: UITableViewCell) {
-        let index = munchkinTableView.indexPath(for: cell)?.row
-        MunchkinsDatabase.shared.chooseRandomNameForMunchkin(at: index)
-    }
-    
 }
 
 extension MunchkinNamesViewController: SelectableWithTheme {
     
     func cellDidRequestToOpenThemePicker(cell: UITableViewCell, munchkin: Munchkin) {
-        self.munchkin = munchkin
-        performSegue(withIdentifier: "ThemePickerSegue", sender: self)
+        
+        let pickerController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThemePicker") as! ThemePickerViewController
+        pickerController.didComplete = { theme in         MunchkinThemes.shared.applyTheme(theme, forMunchkin: munchkin)
+        }
+        present(pickerController, animated: true, completion: nil)
     }
     
 }

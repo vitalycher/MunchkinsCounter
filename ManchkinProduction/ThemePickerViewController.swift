@@ -10,6 +10,7 @@ import UIKit
 
 class ThemePickerViewController: UIViewController {
     
+    var didComplete: ((Theme) -> Void)?
     var munchkin: Munchkin?
     
     @IBOutlet weak private var themePickerTableView: UITableView!
@@ -46,7 +47,7 @@ extension ThemePickerViewController: UITableViewDataSource {
 extension ThemePickerViewController: AppliableWithTheme {
     
     func cellDidRequestToApplyTheme(cell: UITableViewCell, theme: Theme) {
-        MunchkinThemes.shared.applyTheme(theme, forMunchkin: munchkin ?? Munchkin())
+        didComplete?(theme)
         dismiss(animated: true, completion: nil)
     }
     

@@ -23,7 +23,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var increaseLevelButton: UIButton!
     @IBOutlet weak var decreaseLevelButton: UIButton!
     
-    weak var delegate: ChangableWithMunchkinLevel?
+    weak var levelDelegate: ChangableWithMunchkinLevel?
     
     var munchkin: Munchkin? {
         didSet {
@@ -35,14 +35,14 @@ class GameTableViewCell: UITableViewCell {
             
             munchkin?.image.subscribeNext { [weak self] in
                 self?.playerImageView.image = $0
-                }.ownedBy(self).putInto(self.pool)
+                }.putInto(self.pool)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        increaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.delegate?.cellDidRequestToIncreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
-        decreaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.delegate?.cellDidRequestToDecreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
+        increaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.levelDelegate?.cellDidRequestToIncreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
+        decreaseLevelButton.selectionSignal.subscribeNext { [weak self] in self?.levelDelegate?.cellDidRequestToDecreaseLevel(cell: self ?? UITableViewCell.init()) }.ownedBy(self)
         
         playerImageView.layer.cornerRadius = playerImageView.frame.size.width / 2
     }
@@ -51,10 +51,6 @@ class GameTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         pool.drain()
-    }
-    
-    private func setManchkinName(with name: String) {
-        munchkin?.name.value = name
     }
     
 }

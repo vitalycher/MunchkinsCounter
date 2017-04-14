@@ -18,11 +18,12 @@ class MunchkinsDatabase {
     
     var munchkins = [Munchkin]() {
         didSet {
-           summaryValiditySignal = munchkins.map { $0.isValid }.reduce(Observable(true)) { result, element in result && element }.observable()
+            summaryValiditySignal = munchkins.map { $0.isValid }.reduce(Observable(true), &&).observable()
+            munchkins.forEach { munchkin in munchkin.isWinner().subscribeNext { [weak self] isWinner in if isWinner { self?.winPipe.sendNext(munchkin) } } }
         }
     }
-
-    var summaryValiditySignal: Signal<Bool>?
+    
+    var summaryValiditySignal = Observable(false)
     
     typealias ErrorMessageWithDescription = (title: String, message: String)
     
@@ -33,12 +34,12 @@ class MunchkinsDatabase {
         if let stringNumber = munchkinNumber {
             if let number = Int(stringNumber) {
                 
-                if ApplicationValidators.allowedMunchkinsCount.check(number) {
+                if Validators.allowedMunchkinsCount.check(number) {
                     munchkinsCountAcceptedPipe.sendNext()
                     for _ in 0..<number {
                         munchkins.append(Munchkin())
                     }
-                } else if ApplicationValidators.lowMunchkinsCount.check(number) {
+                } else if Validators.lowMunchkinsCount.check(number) {
                     error = ApplicationMessages.notEnoughPlayers
                 } else {
                    error = ApplicationMessages.tooMuchPlayers
@@ -61,11 +62,7 @@ class MunchkinsDatabase {
     func increaseMunchkinLevel(at index: Int?) {
         if let index = index {
             let munchkin = munchkins[index]
-            if munchkin.canAddLevel() {
-                munchkin.addLevel()
-            } else {
-                winPipe.sendNext(munchkin)
-            }
+            munchkin.addLevelIfPossible()
         }
     }
     
@@ -83,10 +80,14 @@ class MunchkinsDatabase {
         return resultSignal
     }
     
-    func chooseRandomNameForMunchkin(at index: Int?) {
+    func applyNameForMunchkin(at index: Int?, withName name: String?) {
         if let index = index {
             let munchkin = munchkins[index]
-            munchkin.applyRandomName()
+            if let name = name {
+                munchkin.applyName(name)
+            } else {
+               munchkin.applyRandomName()
+            }
         }
     }
     

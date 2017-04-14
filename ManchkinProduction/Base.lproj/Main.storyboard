@@ -143,7 +143,7 @@ All rights reserved. ©</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTH-ko-Jtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="942" y="936"/>
         </scene>
         <!--Munchkin Setup-->
         <scene sceneID="ZYW-tG-2pB">
@@ -182,7 +182,7 @@ All rights reserved. ©</string>
                                                     </constraints>
                                                     <state key="normal" image="teh"/>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lvl1" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-un-9Jf">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-un-9Jf">
                                                     <rect key="frame" x="10" y="9" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="dKG-A5-vQJ"/>
@@ -251,7 +251,7 @@ All rights reserved. ©</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpG-Vp-2xZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="151.57421289355324"/>
+            <point key="canvasLocation" x="942" y="1672"/>
         </scene>
         <!--Fight!-->
         <scene sceneID="mtx-gW-afa">
@@ -273,7 +273,7 @@ All rights reserved. ©</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rr-rg-a2s" id="VJM-vT-RKP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-JV-FCN">
@@ -379,7 +379,7 @@ All rights reserved. ©</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgC-TT-Brh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Nfw-aN-ZpF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4696.8000000000002" y="-646.32683658170924"/>
+            <point key="canvasLocation" x="-425" y="3206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gJf-Ig-pdj">
@@ -404,7 +404,7 @@ All rights reserved. ©</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ot6-YG-WUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="943" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0ue-dI-B7S">
@@ -426,12 +426,12 @@ All rights reserved. ©</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJa-ht-IyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="133.5832083958021"/>
+            <point key="canvasLocation" x="329" y="2428"/>
         </scene>
         <!--Theme Picker-->
         <scene sceneID="VOK-Wg-3aE">
             <objects>
-                <viewController restorationIdentifier="PopoverViewController" storyboardIdentifier="PopoverViewController" automaticallyAdjustsScrollViewInsets="NO" id="OLY-sn-2Wf" customClass="ThemePickerViewController" customModule="MunchkinsCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PopoverViewController" storyboardIdentifier="ThemePicker" automaticallyAdjustsScrollViewInsets="NO" id="OLY-sn-2Wf" customClass="ThemePickerViewController" customModule="MunchkinsCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zpv-w3-MpG"/>
                         <viewControllerLayoutGuide type="bottom" id="glf-R6-oQ7"/>
@@ -524,7 +524,7 @@ All rights reserved. ©</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pn-Eq-cv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4887.1999999999998" y="940.47976011994012"/>
+            <point key="canvasLocation" x="2516" y="3206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tpe-WA-HYr">
@@ -545,13 +545,12 @@ All rights reserved. ©</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiS-Ny-aYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="940.47976011994012"/>
+            <point key="canvasLocation" x="1569" y="2429"/>
         </scene>
     </scenes>
     <resources>
         <image name="GO" width="359" height="341"/>
         <image name="leftArrow" width="128" height="128"/>
-        <image name="lvl1" width="400" height="300"/>
         <image name="rightArrow" width="128" height="128"/>
         <image name="teh" width="344" height="304"/>
     </resources>
